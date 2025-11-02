@@ -6,33 +6,49 @@
 
 // 1️⃣ Change text color of heading with id="title" to red.
 
+    document.getElementById("title").style.color="red";
 
 // 2️⃣ Change background color of all <p> elements to lightgray.
 
+    document.querySelectorAll("p").forEach(p => p.style.backgroundColor = "lightgray");
 
 // 3️⃣ Change heading text (#title) to "Welcome to the DOM Lab!".
-
+    
+    document.getElementById("title").innerText="Welcome to the DOM Lab!";
 
 // 4️⃣ Add a solid black border to all <div> elements.
 
+    let divs=document.querySelectorAll("div");
+    for(let div of divs)
+        div.style.border = "2px solid black";
 
 // 5️⃣ Increase font size of the first <h1> to 36px.
 
+    document.querySelector("h1").style.fontSize="36px";
 
 // 6️⃣ Change text color of elements with class="highlight" to blue.
 
+    let highlight= document.getElementsByClassName("highlight");
+    for(let h of highlight)
+        h.style.color="blue";
 
 // 7️⃣ Add CSS class "active" to the first <div>.
 
+    document.querySelector("div").classList.add("active");
 
 // 8️⃣ Change the <body> background color to lightblue.
 
+    document.body.style.backgroundColor="lightblue";
 
 // 9️⃣ Set the font family of all <p> elements to Arial.
 
+    let paragraph=document.querySelectorAll("p");
+    for(let p of paragraph)
+        p.style.fontFamily="Arial";
 
 // 🔟 Change the image source of #sampleImage.
 
+    document.getElementById("sampleImage").src="bookstack.png";
 
 // 🟦 PART 2: Creating and Appending Elements (11–20)
 
