@@ -116,8 +116,8 @@
 // 1️⃣9️⃣ Add a <span>[Edited]</span> inside every <p>.
 
     let allParagraphs = document.querySelectorAll("p");
-
-    for(let i=0;i<allParagraphs.length;i++){
+    let i =0;
+    for(;i<allParagraphs.length;i++){
         let newSpan =document.createElement("span");
         newSpan.innerText =` [Edited] Paragraph ${i+1}`;
         allParagraphs[i].appendChild(newSpan);
@@ -257,29 +257,71 @@ document.body.appendChild(line02);
 
 // 3️⃣1️⃣ Change text of the first <li>.
 
+    let firstLi = document.querySelector("li");  
+    firstLi.innerText = "This is the updated first list item!";
 
 // 3️⃣2️⃣ Get input value when button clicked.
 
+    let inputField01 = document.createElement("input");
+    inputField01.placeholder = "Type something...";
+    document.body.appendChild(inputField01);
+
+    let getButton = document.createElement("button");
+    getButton.innerText = "Get Value";
+    document.body.appendChild(getButton);
+
+    getButton.addEventListener("click", function() {
+    let value = inputField01.value; 
+    alert("You entered: " + value);
+    }); 
 
 // 3️⃣3️⃣ Count number of <p> and alert the count.
-
+let countp = document.querySelectorAll("p").length;
+alert("Number of <p> elements: " + countp);
 
 // 3️⃣4️⃣ Remove all <p> elements.
-
+let paragraphs = document.querySelectorAll("p");
+paragraphs.forEach(p => p.remove());
 
 // 3️⃣5️⃣ Replace existing <h2> with new one.
-
+let oldHeading = document.querySelector("h2");
+let newHeading = document.createElement("h2");
+newHeading.innerText = "This is the new heading!";
+if (oldHeading) oldHeading.replaceWith(newHeading);
 
 // 3️⃣6️⃣ Add CSS class 'highlighted' to all <li>.
-
+let allItems = document.querySelectorAll("li");
+for (let j = 0; j < allItems.length; j++) {
+  allItems[j].classList.add("highlighted");
+}
 
 // 3️⃣7️⃣ Toggle a CSS class on <div> when clicked.
+let myDiv01 = document.querySelector("div");
+if (myDiv01) {
+  myDiv01.addEventListener("click", function() {
+    myDiv01.classList.toggle("active");
+  });
+}
 
-
-// 3️⃣8️⃣ Clone an existing element and append copy.
-
+// 3️⃣8️⃣ Clone an existing element and append copy. (مع حارس)
+let originalElement = document.querySelector("p");
+if (originalElement) {
+  let clonedElement = originalElement.cloneNode(true);
+  document.body.appendChild(clonedElement);
+}
 
 // 3️⃣9️⃣ Scroll smoothly to bottom when button clicked.
-
+let scrollButton = document.createElement("button");
+scrollButton.innerText = "Scroll to Bottom";
+document.body.appendChild(scrollButton);
+scrollButton.addEventListener("click", function() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+});
 
 // 4️⃣0️⃣ Build list dynamically using innerHTML from an array.
+let items = ["HTML", "CSS", "JavaScript", "Kotlin", "Python"];
+let myList01 = document.createElement("ul");
+items.forEach(function(item) { myList01.innerHTML += `<li>${item}</li>`; });
+myList01.style.fontSize = "20px";
+myList01.style.color = "#ae5e94ff";
+document.body.appendChild(myList01);
