@@ -100,6 +100,7 @@
 
 
 // 1️⃣7️⃣ Create a <div> with class "card" and text inside.
+
     let newDiv = document.createElement("div");
     newDiv.className = "card";
     newDiv.innerText="this is a new div in class card ..";
@@ -107,11 +108,13 @@
     document.body.appendChild(newDiv);
 
 // 1️⃣8️⃣ Append a paragraph containing your name.
+
     let newp = document.createElement("p");
     newp.innerText="my name nawal alrfoo ";
     document.body.appendChild(newp);
 
 // 1️⃣9️⃣ Add a <span>[Edited]</span> inside every <p>.
+
     let allParagraphs = document.querySelectorAll("p");
 
     for(let i=0;i<allParagraphs.length;i++){
@@ -130,33 +133,125 @@
 
 // 2️⃣1️⃣ Add click event that shows an alert.
 
+    let myButton = document.querySelector("button");
+
+    myButton.addEventListener("click", function() {
+    alert("Button was clicked!");  
+});
 
 // 2️⃣2️⃣ Change background color of a <div> when clicked.
+
+    let myDiv = document.querySelector("div");
+
+    myDiv.addEventListener("click", function() {
+        myDiv.style.backgroundColor = "pink";
+    });
 
 
 // 2️⃣3️⃣ When hovering over <p>, make it bold.
 
+    let myParagraph = document.querySelector("p");
+
+    myParagraph.addEventListener("mouseover", function() {
+        myParagraph.style.fontWeight = "bold";
+    });
+
 
 // 2️⃣4️⃣ When mouse leaves paragraph, remove bold style.
-
+    myParagraph.addEventListener("mouseout", function() {
+        myParagraph.style.fontWeight = "normal";
+    });
 
 // 2️⃣5️⃣ Add button to hide the image.
+    
+    let hideButton = document.createElement("button");
+    hideButton.innerText = "Hide Image";
+    document.body.appendChild(hideButton);
 
+    let myImag = document.querySelector("img");
+
+    hideButton.addEventListener("click", function() {
+    myImag.style.display = "none";
+});
 
 // 2️⃣6️⃣ Add button to show the image again.
 
+    let showButton = document.createElement("button");
+    showButton.innerText = "show Image";
+    document.body.appendChild(showButton);
+
+    showButton.addEventListener("click", function() {
+    myImag.style.display ="block";
+}); 
 
 // 2️⃣7️⃣ Create a counter button that increases with each click.
 
+    let count = 0;
+
+    let counterButton = document.createElement("button");
+    counterButton.innerText =`count : (${count}) click ...`;
+    document.body.appendChild(counterButton);
+
+    counterButton.addEventListener("click", function() {
+    count++;
+    counterButton.innerText = `count : (${count}) click...`;
+});
+//
+
+let line00 = document.createElement("hr");
+document.body.appendChild(line00);
 
 // 2️⃣8️⃣ Display entered text from an input when button clicked.
 
+    let stringText ="Your text :";
+    let inputField = document.createElement("input");
+    inputField.placeholder = "Enter text...";
+    document.body.appendChild(inputField);
+
+    let showButton01 = document.createElement("button");
+    showButton01.innerText = "Show Text";
+    document.body.appendChild(showButton01);
+
+    let output = document.createElement("p");
+    document.body.appendChild(output);
+
+    showButton01.addEventListener("click", function() {
+    stringText+=inputField.value;
+    output.innerText =stringText;
+    });
+
+//
+
+let line01 = document.createElement("hr");
+document.body.appendChild(line01);
 
 // 2️⃣9️⃣ Change background color randomly when a button is clicked.
 
+    let colorButton = document.createElement("button");
+    colorButton.innerText = "Change Background Color";
+    document.body.appendChild(colorButton);
+
+    colorButton.addEventListener("click", function() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    let randomColor = `rgb(${r}, ${g}, ${b})`;
+    document.body.style.backgroundColor = randomColor;
+});
 
 // 3️⃣0️⃣ Display which key is pressed.
 
+    let info = document.createElement("p");
+    info.innerText = "Press any key...";
+    document.body.appendChild(info);
+
+    document.addEventListener("keydown", function(event) {
+        info.innerText = `You pressed: ${event.key}`;
+    }); 
+
+let line02 = document.createElement("hr");
+document.body.appendChild(line02);
 
 // 🟧 PART 4: Modifying and Traversing DOM (31–40)
 
