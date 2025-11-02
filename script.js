@@ -54,32 +54,76 @@
 
 // 1️⃣1️⃣ Create a new <p> and append it to the <body>.
 
+    let newParagraph = document.createElement("p");  
+    newParagraph.innerText = "This is a new paragraph ..."; 
+    document.body.appendChild(newParagraph); 
 
 // 1️⃣2️⃣ Create a new <li> and add it to the existing <ul>.
+    let newli = document.createElement("li");  
+    newli.innerText = "This is a new li ..."; 
+    document.querySelector("ul").appendChild(newli); 
 
 
 // 1️⃣3️⃣ Create a <button> labeled "Click Me!" and append it to a <div>.
-
+    
+    let newButton =document.createElement("button");
+    newButton.innerText="Click Me ... ";
+    document.querySelector("div").appendChild(newButton);
 
 // 1️⃣4️⃣ Create <h2> dynamically and insert it before the first <p>.
+    
+    let newH2 = document.createElement("h2");
+    newH2.innerText="this is a new H2 ...";
+    
+    let firstP = document.querySelector("p");
 
+    document.body.insertBefore(newH2,firstP);
 
 // 1️⃣5️⃣ Create an image and set width and height.
+
+    let newImg = document.createElement("img");
+    newImg.src ="new.png";
+    newImg.width = 200;   
+    newImg.height = 150;
+
+    document.body.appendChild(newImg);
 
 
 // 1️⃣6️⃣ Add 3 new <li> items using a loop.
 
+    for(let i=0;i<3;i++){
+        let newli = document.createElement("li");  
+        newli.innerText = `This is a new li ${i+1} ...`; 
+
+        document.body.appendChild(newli);
+    }
+
 
 // 1️⃣7️⃣ Create a <div> with class "card" and text inside.
+    let newDiv = document.createElement("div");
+    newDiv.className = "card";
+    newDiv.innerText="this is a new div in class card ..";
 
+    document.body.appendChild(newDiv);
 
 // 1️⃣8️⃣ Append a paragraph containing your name.
-
+    let newp = document.createElement("p");
+    newp.innerText="my name nawal alrfoo ";
+    document.body.appendChild(newp);
 
 // 1️⃣9️⃣ Add a <span>[Edited]</span> inside every <p>.
+    let allParagraphs = document.querySelectorAll("p");
 
+    for(let i=0;i<allParagraphs.length;i++){
+        let newSpan =document.createElement("span");
+        newSpan.innerText =` [Edited] Paragraph ${i+1}`;
+        allParagraphs[i].appendChild(newSpan);
+    }
 
 // 2️⃣0️⃣ Remove the last child of <ul>.
+
+    let myList = document.querySelector("ul");
+    myList.removeChild(myList.lastElementChild);
 
 
 // 🟨 PART 3: Event Handling (21–30)
